@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:**_____Maddie Bonanno____________________
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -13,43 +13,43 @@ and push to your github repository.
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
 .  
-.  
-.  
-.  
+
+we have n/3, which im pretty sure will end up being a constant such as O(1)
+
 .  
   * $W(n)=5W(n/4)+n$
 .  
-.  
+.  n/4 and also an n --> n/4 goes to a constant so this leaves O(n)
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
 .  
-.  
+.  n/7 to constant plus n becomes I think O(n)
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
 .  
 .  
-.  
+.  n/3 to constant plus an n^2 which means bare minimum O(n^2)
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
 .  
 .  
-.  
+.  n/2 to constant plus an n^3 which means bare minimum O(n^3)
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
 .  
 .  
-.  
+.  it's n/25 to a constant + n^3/2 over logn... which makes me think it's an n exponential over a log which has ???
 .  
 .  
   * $W(n)=W(n-1)+2$
 .  
-.  
+.  i feel like this really just means O(1)
 .  
 .  
 .  
@@ -57,9 +57,11 @@ and push to your github repository.
 .  
 .  
 .  
-.  
+.  n^c is a big value so prob O(n^k)
 .  
   * $W(n)=W(\sqrt{n})+1$
+
+i think exponential to a c so O(n^k)
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -79,6 +81,9 @@ and push to your github repository.
 
     What are the asymptotic running times of each of these algorithms?
     Which algorithm would you choose?
+
+
+I feel like the third one is definitely gonna take a hot minute with values in O(n^2) time
 
 
 3. Now that you have some practice solving recurrences, let's work on

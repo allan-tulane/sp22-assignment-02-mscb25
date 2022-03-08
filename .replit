@@ -1,0 +1,2 @@
+language = "python3"
+run = "%load_ext autoreload %autoreload 2 from main import *"
