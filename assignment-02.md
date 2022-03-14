@@ -14,54 +14,64 @@ and push to your github repository.
   * $W(n)=2W(n/3)+1$
 .  
 
-we have n/3, which im pretty sure will end up being a constant such as O(1)
+given (n/3) --> log3 n /// 2W = 2^i nodes  // +1 = constant
+= 2^log3n --> **= O(n^(2(log3)))**
 
 .  
   * $W(n)=5W(n/4)+n$
 .  
-.  n/4 and also an n --> n/4 goes to a constant so this leaves O(n)
+given n/4 --> log 4 n /// 5(W) = 5^i nodes // + n
+= 5^nlog4n --> **= O(n^(log4n))**
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
 .  
-.  n/7 to constant plus n becomes I think O(n)
+.  n/7 --> log 7 n // 7(W) = 7^i nodes // +n
+= 7^nlog7n --> **= O(n log7 n)**
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
 .  
 .  
-.  n/3 to constant plus an n^2 which means bare minimum O(n^2)
+  n/3 --> log 3 n // 9(W) = 9^i nodes // +n^2
+= 9^n2log3n --> **= O(n^2 log3 n)**
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
 .  
 .  
-.  n/2 to constant plus an n^3 which means bare minimum O(n^3)
+    n/2 --> log 2 n // 8(W) = 8^i nodes // +n^3
+= 8^log 2 n^4 --> **= O(n^3 log2 n)**
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
 .  
 .  
-.  it's n/25 to a constant + n^3/2 over logn... which makes me think it's an n exponential over a log which has ???
+.  n/25 --> log 25 n // 49(W) = 49^i nodes // + n^3/2 log n
+= reduce: log 5 n // 7^i nodes // +n^3/2 log n
+= 7^(logn^2 n^3/2) --> **= O(n^(logn n^3/2))**
 .  
 .  
   * $W(n)=W(n-1)+2$
 .  
-.  i feel like this really just means O(1)
+ n-1 --> n // +2 = constant
+  **=O(n)**
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
 .  
+.  n-1 --> n // + n^c >= n^1
+= n * n^c --> **= O(n^c+1)**
 .  
-.  
-.  n^c is a big value so prob O(n^k)
+    
 .  
   * $W(n)=W(\sqrt{n})+1$
 
-i think exponential to a c so O(n^k)
+ sqrt n --> n^1/2 (aka log)// +1
+ **= O(log(1/2)n)**
 
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
@@ -83,7 +93,16 @@ i think exponential to a c so O(n^k)
     Which algorithm would you choose?
 
 
-I feel like the third one is definitely gonna take a hot minute with values in O(n^2) time
+A --> 5 subproblems (5W) of 1/2 size (n/2) and combinining in linear (O(n)) time
+A = 5W(n/2) + n --> 5^(log2n) --> **= O(n^log2 5)**
+
+B --> size n problems(n) with two n-1 subproblems (2W) (n-1) and combining in constant (O(1))
+B = 2W(n-1) + 1 --> 2^n leaves (size n problems) --> **= O(n^2)**
+
+C --> size n problems (n) dividing into 9 subproblems (9W) of size n/3 (n/3), recursively solving each subproblem and combining in (O(n^2))
+C = 9W(n/3) + n^2 --> 9^(log3 n^2) with size n problems accounted for --> **= O(n^(log3 n^2))**
+
+Comparing these algorithms, algorithm A would be chosen, as it will run the fastest (log in the exponent vs constants in exponents)
 
 
 3. Now that you have some practice solving recurrences, let's work on
